@@ -1,0 +1,240 @@
+/* ================================================================= *
+ * Snoopy Family - 現代柔和圓角卡片風格 (style.css)
+ * ================================================================= */
+
+:root {
+    --bg-main: #F7F3E8;       /* 主背景：柔和奶油米白 */
+    --text-main: #242424;     /* 主文字：質感深灰黑 */
+    --card-bg: #FFFFFF;       /* 卡片背景：純白 */
+    --accent-red: #D94B42;    /* 質感紅 */
+    --accent-yellow: #EFCB55; /* 暖淡黃 */
+    --accent-blue: #789CB8;   /* 莫蘭迪藍 */
+    --border-color: #E8E2D5;  /* 柔和圓角邊框 */
+    --radius-lg: 20px;        /* 大圓角 */
+    --radius-md: 14px;        /* 中圓角 */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    padding: 30px 20px;
+}
+
+/* 頂部導覽列 */
+.site-header {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    background: var(--card-bg);
+    padding: 16px 28px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #666;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* 主容器 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 大卡片 */
+.card-section {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 首頁 Banner 大圖卡片 */
+.banner-card {
+    background: #FAF6EE;
+    border-radius: var(--radius-md);
+    padding: 10px;
+    text-align: center;
+}
+
+/* 網格排版 */
+.grid-3x4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+/* 卡片連結樣式 */
+.char-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* 個人角色小卡片 */
+.char-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    height: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.char-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-color: var(--accent-blue);
+}
+
+/* 卡片中的圖片容器：採用 contain，完整呈現不裁切 */
+.char-img-box {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    background-color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid #EFECE6;
+}
+
+.char-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* <-- 關鍵設定：完整顯示不被切掉 */
+}
+
+.char-name {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.char-desc {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* 詳細介紹頁專用樣式 */
+.detail-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* 詳細頁的圖片框：完整呈現不裁切 */
+.detail-img-box {
+    width: 100%;
+    height: 320px;
+    border-radius: var(--radius-md);
+    background-color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #EFECE6;
+    margin-bottom: 15px;
+}
+
+.detail-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* <-- 關鍵設定：完整顯示不被切掉 */
+}
+
+.detail-content h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.detail-content p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.back-btn {
+    display: inline-block;
+    background-color: var(--accent-blue);
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: background 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #5a7d99;
+}
+
+/* 頁尾 */
+.site-footer {
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .detail-layout {
+        grid-template-columns: 1fr;
+    }
+}
